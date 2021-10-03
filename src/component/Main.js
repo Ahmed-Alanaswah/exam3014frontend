@@ -12,7 +12,7 @@ export class Main extends Component {
 	}
 
 	componentDidMount = async () => {
-		const request = await axios.get(`http://localhost:8001/flower`);
+		const request = await axios.get(`https://exam3014.herokuapp.com/flower`);
 		this.setState({
 			showApiData: true,
 			flowerApiData: request.data,
@@ -20,7 +20,7 @@ export class Main extends Component {
 	};
 
 	addToFavourite = async (obj) => {
-		axios.post(`http://localhost:8001/flower/favourite`, obj);
+		axios.post(`https://exam3014.herokuapp.com/flower/favourite`, obj);
 		console.log(obj);
 	};
 

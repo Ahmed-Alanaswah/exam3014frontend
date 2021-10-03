@@ -17,7 +17,9 @@ export class Favourite extends Component {
 	}
 
 	componentDidMount = async () => {
-		const request = await axios.get(`http://localhost:8001/flower/favourite`);
+		const request = await axios.get(
+			`https://exam3014.herokuapp.com/flower/favourite`
+		);
 		this.setState({
 			showFavData: true,
 			flowerFavData: request.data,
@@ -28,7 +30,7 @@ export class Favourite extends Component {
 
 	deleteFavourite = async (slug) => {
 		const request = await axios.delete(
-			`http://localhost:8001/flower/favourite/${slug}`
+			`https://exam3014.herokuapp.com/flower/favourite/${slug}`
 		);
 		this.setState({
 			showApiData: true,
@@ -52,7 +54,7 @@ export class Favourite extends Component {
 			instructions: this.state.instructions,
 		};
 		const request = await axios.put(
-			`http://localhost:8001/flower/favourite/${this.state.slug}`,
+			`https://exam3014.herokuapp.com/flower/favourite/${this.state.slug}`,
 			updated
 		);
 		console.log(updated);
